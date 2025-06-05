@@ -25,7 +25,6 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const [otpLoading, setOtpLoading] = useState(false);
   const navigate = useNavigate();
-  const apiUrl = import.meta.env.VITE_BACKEND_URL_GOOGLE as string;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -205,28 +204,6 @@ const Register = () => {
 
           {!otpSent && (
             <>
-              <div className="relative my-6">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-300"></div>
-                </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="px-3 bg-white text-gray-500 font-medium">Or continue with</span>
-                </div>
-              </div>
-
-              <Button
-                type="button"
-                variant="outline"
-                className="w-full py-2 bg-white text-gray-700 border-gray-300 hover:bg-gray-50 rounded-lg font-medium transition duration-200 flex items-center justify-center"
-                onClick={() => (window.location.href = `${apiUrl}`)}
-              >
-                <img
-                  src="https://developers.google.com/identity/images/g-logo.png"
-                  alt="Google"
-                  className="h-5 w-5 mr-3"
-                />
-                Continue with Google
-              </Button>
             </>
           )}
         </CardContent>

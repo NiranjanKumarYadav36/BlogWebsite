@@ -2,7 +2,7 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: "http://localhost:5001/blog",
+    baseURL: "https://blogwebsitebackend-nn5u.onrender.com/blog",
     headers: {
         "Content-Type": "application/json",
     },

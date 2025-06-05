@@ -132,15 +132,6 @@ export const loginHandle = async (req: Request, res: Response): Promise<void> =>
 
         const user = validUser[0];
 
-        if (user["login_method"] === "google") {
-            res.status(401).json({
-                success: false,
-                message: "Hello! It looks like you signed up using Google. Please continue logging in with your Google account."
-            });
-            return;
-        }
-
-
         // Compare password
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {

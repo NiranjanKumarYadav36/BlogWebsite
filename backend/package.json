@@ -26,6 +26,7 @@
     "@types/passport-google-oauth20": "^2.0.16",
     "@types/pg": "^8.11.10",
     "@types/sanitize-html": "^2.15.0",
+    "@types/axios": "^0.9.36",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
@@ -34,9 +35,7 @@
     "@aws-sdk/client-s3": "^3.730.0",
     "@aws-sdk/credential-providers": "^3.730.0",
     "@supabase/supabase-js": "^2.49.1",
-    "@types/axios": "^0.9.36",
     "axios": "^1.7.9",
-    "backend": "file:",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.7",
     "cookie-session": "^2.1.0",

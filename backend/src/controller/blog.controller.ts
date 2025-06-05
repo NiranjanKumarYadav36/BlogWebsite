@@ -158,8 +158,8 @@ export const loginHandle = async (req: Request, res: Response): Promise<void> =>
         // Store JWT in HttpOnly Cookie
         res.cookie("token", token, {
             httpOnly: true,
-            // secure: process.env.NODE_ENV?.toString() === "production", // Secure in production
-            sameSite: "strict",
+            secure: true, // Secure in production
+            sameSite: "none", // Needed for cross-site cookies
             maxAge: 3600000,
         });
 

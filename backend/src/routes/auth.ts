@@ -30,8 +30,8 @@ router.get("/google/callback",
 
         res.cookie("token", token, {
             httpOnly: true,
-            // secure: process.env.NODE_ENV === "production", // Enable in production
-            sameSite: "strict",
+            secure: true, // Enable in production
+            sameSite: "none",
             maxAge: 3600000
         });
 

@@ -83,7 +83,7 @@ export const deletUser = async function (req: Request, res: Response): Promise<v
         // Check if the email exists in newsletterusers before deleting
         const newsletterUserCheck = await queryDB(`SELECT * FROM ${tableName2} WHERE email = $1`, [userExists[0]["email"]]);
         if (newsletterUserCheck.length > 0) {
-            await queryDB(`DELETE FROM ${tableName2} WHERE email = $1`, userExists[0]["email"]);
+            await queryDB(`DELETE FROM ${tableName2} WHERE email = $1`, [userExists[0]["email"]]);
         }
 
         res.status(200).json({ message: "User deleted successfully" });

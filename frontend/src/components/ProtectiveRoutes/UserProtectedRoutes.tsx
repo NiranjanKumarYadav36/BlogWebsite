@@ -33,10 +33,40 @@ const UserProtectedRoutes = () => {
 
     if (isAuthenticated === null) {
         return (
-            <>
-                <Toaster position="top-center" />
-                <h1 className="text-center text-xl font-semibold">Checking authentication...</h1>
-            </>
+            <div className="flex items-center justify-center h-screen bg-gray-100">
+                <Toaster position='top-center'/>
+                <div className="relative w-20 h-20">
+                    <div className="absolute w-6 h-6 bg-blue-500 rounded-full animate-bounce-slow left-0"></div>
+                    <div className="absolute w-6 h-6 bg-red-500 rounded-full animate-bounce-mid left-6"></div>
+                    <div className="absolute w-6 h-6 bg-green-500 rounded-full animate-bounce-fast left-12"></div>
+                </div>
+                <style>
+                    {`
+                    @keyframes bounceSlow {
+                        0%, 100% { transform: translateY(0); }
+                        50% { transform: translateY(-20px); }
+                    }
+                    @keyframes bounceMid {
+                        0%, 100% { transform: translateY(0); }
+                        50% { transform: translateY(-30px); }
+                    }
+                    @keyframes bounceFast {
+                        0%, 100% { transform: translateY(0); }
+                        50% { transform: translateY(-40px); }
+                    }
+
+                    .animate-bounce-slow {
+                        animation: bounceSlow 1.5s infinite;
+                    }
+                    .animate-bounce-mid {
+                        animation: bounceMid 1s infinite;
+                    }
+                    .animate-bounce-fast {
+                        animation: bounceFast 0.75s infinite;
+                    }
+                `}
+                </style>
+            </div>
         );
     }
 

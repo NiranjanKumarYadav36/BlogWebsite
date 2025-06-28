@@ -65,7 +65,7 @@ export const deletUser = async function (req: Request, res: Response): Promise<v
 
         const tableName = 'blog.users'
         const tableName1 = "blog.deletedusers"
-        const tableName2 = "blgog.newsletterusers"
+        const tableName2 = "blog.newsletterusers"
 
         const userExists = await queryDB(`SELECT * FROM ${tableName} WHERE id = $1`, [id]);
 
